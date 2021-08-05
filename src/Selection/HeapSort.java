@@ -1,5 +1,7 @@
+package Selection;
+
 public class HeapSort {
-	public void sort(int arr[])
+	public static void sort(int arr[])
 	{
 		int n = arr.length;
 
@@ -22,7 +24,7 @@ public class HeapSort {
 
 	// To heapify a subtree rooted with node i which is
 	// an index in arr[]. n is size of heap
-	void heapify(int arr[], int n, int i)
+	private static void heapify(int arr[], int n, int i)
 	{
 		int largest = i; // Initialize largest as root
 		int left = 2*i + 1; // left = 2*i + 1
@@ -46,27 +48,5 @@ public class HeapSort {
 			// Recursively heapify the affected sub-tree
 			heapify(arr, n, largest);
 		}
-	}
-
-	/* A utility function to print array of size n */
-	static void printArray(int arr[])
-	{
-		int n = arr.length;
-		for (int i=0; i<n; ++i)
-			System.out.print(arr[i]+" ");
-		System.out.println();
-	}
-
-	// Driver program
-	public static void main(String args[])
-	{
-		int arr[] = {12, 11, 13, 5, 6, 7};
-		int n = arr.length;
-
-		HeapSort ob = new HeapSort();
-		ob.sort(arr);
-
-		System.out.println("Sorted array is");
-		printArray(arr);
 	}
 }

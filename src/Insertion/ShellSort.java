@@ -1,15 +1,8 @@
-public class ShellSort {
-	/* An utility function to print array of size n*/
-	static void printArray(int arr[])
-	{
-		int n = arr.length;
-		for (int i=0; i<n; ++i)
-			System.out.print(arr[i] + " ");
-		System.out.println();
-	}
+package Insertion;
 
+public class ShellSort {
 	/* function to sort arr using shellSort */
-	int sort(int arr[])
+	public static void sort(int arr[])
 	{
 		int n = arr.length;
 
@@ -38,20 +31,5 @@ public class ShellSort {
 				arr[j] = temp;
 			}
 		}
-		return 0;
-	}
-
-	// Driver method
-	public static void main(String args[])
-	{
-		int arr[] = {12, 34, 54, 2, 3};
-		System.out.println("Array before sorting");
-		printArray(arr);
-
-		ShellSort ob = new ShellSort();
-		ob.sort(arr);
-
-		System.out.println("Array after sorting");
-		printArray(arr);
 	}
 }
