@@ -21,4 +21,4 @@ public class SelectionSort {
 	}
 }
 
-//Algoritimo de usado como referência se encontra em: https://www.geeksforgeeks.org
+//Algoritimo usado como referência se encontra em: https://www.geeksforgeeks.org
