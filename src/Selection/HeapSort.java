@@ -1,52 +1,44 @@
 package Selection;
 
 public class HeapSort {
-	public static void sort(int arr[])
-	{
-		int n = arr.length;
+	public static void sort(int array[]) {
+		int arraySize = array.length;
 
-		// Build heap (rearrange array)
-		for (int i = n / 2 - 1; i >= 0; i--)
-			heapify(arr, n, i);
+		for (int i = arraySize / 2 - 1; i >= 0; i--) {
+			heapify(array, arraySize, i);
+		}
 
-		// One by one extract an element from heap
-		for (int i=n-1; i>=0; i--)
-		{
-			// Move current root to end
-			int temp = arr[0];
-			arr[0] = arr[i];
-			arr[i] = temp;
+		for (int i= arraySize - 1; i>=0; i--) {
+			int tempValue = array[0];
 
-			// call max heapify on the reduced heap
-			heapify(arr, i, 0);
+			array[0] = array[i];
+			array[i] = tempValue;
+
+			heapify(array, i, 0);
 		}
 	}
 
-	// To heapify a subtree rooted with node i which is
-	// an index in arr[]. n is size of heap
-	private static void heapify(int arr[], int n, int i)
+	private static void heapify(int array[], int n, int i)
 	{
-		int largest = i; // Initialize largest as root
-		int left = 2*i + 1; // left = 2*i + 1
-		int right = 2*i + 2; // right = 2*i + 2
+		int major = i;
+		int leftPosition = 2*i + 1;
+		int rightPosition = 2*i + 2;
 
-		// If left child is larger than root
-		if (left < n && arr[left] > arr[largest])
-			largest = left;
+		if (leftPosition < n && array[leftPosition] > array[major])
+			major = leftPosition;
 
-		// If right child is larger than largest so far
-		if (right < n && arr[right] > arr[largest])
-			largest = right;
+		if (rightPosition < n && array[rightPosition] > array[major])
+			major = rightPosition;
 
-		// If largest is not root
-		if (largest != i)
-		{
-			int swap = arr[i];
-			arr[i] = arr[largest];
-			arr[largest] = swap;
+		if (major != i) {
+			int swap = array[i];
 
-			// Recursively heapify the affected sub-tree
-			heapify(arr, n, largest);
+			array[i] = array[major];
+			array[major] = swap;
+
+			heapify(array, n, major);
 		}
 	}
 }
+
+//Algoritimo de usado como referência se encontra em: https://www.geeksforgeeks.org

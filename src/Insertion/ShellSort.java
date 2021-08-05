@@ -1,35 +1,23 @@
 package Insertion;
 
 public class ShellSort {
-	/* function to sort arr using shellSort */
-	public static void sort(int arr[])
+	public static void sort(int array[])
 	{
-		int n = arr.length;
+		int arraySize = array.length;
 
-		// Start with a big gap, then reduce the gap
-		for (int gap = n/2; gap > 0; gap /= 2)
-		{
-			// Do a gapped insertion sort for this gap size.
-			// The first gap elements a[0..gap-1] are already
-			// in gapped order keep adding one more element
-			// until the entire array is gap sorted
-			for (int i = gap; i < n; i += 1)
-			{
-				// add a[i] to the elements that have been gap
-				// sorted save a[i] in temp and make a hole at
-				// position i
-				int temp = arr[i];
+		for (int gap = arraySize/2; gap > 0; gap /= 2) {
+			for (int i = gap; i < arraySize; i += 1) {
+				int tempValue = array[i];
 
-				// shift earlier gap-sorted elements up until
-				// the correct location for a[i] is found
-				int j;
-				for (j = i; j >= gap && arr[j - gap] > temp; j -= gap)
-					arr[j] = arr[j - gap];
+				int i2;
+				for (i2 = i; i2 >= gap && array[i2 - gap] > tempValue; i2 -= gap) {
+					array[i2] = array[i2 - gap];
+				}
 
-				// put temp (the original a[i]) in its correct
-				// location
-				arr[j] = temp;
+				array[i2] = tempValue;
 			}
 		}
 	}
 }
+
+//Algoritimo de usado como referência se encontra em: https://www.geeksforgeeks.org
