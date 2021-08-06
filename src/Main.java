@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 import Selection.*;
 import Insertion.*;
@@ -49,7 +50,7 @@ public class Main {
 
         long endTime = System.currentTimeMillis();
 
-        System.out.printf("\nTempo de ordenação: %.3f ms%n\n", (endTime - initialTime) / 1000d);
+        System.out.printf("\nTempo de ordenação: %.4f ms%n\n", (endTime - initialTime) / 1000d);
 	}
 
     private static void fillArray(int array[], int maxValues, boolean repeat) {
@@ -65,24 +66,28 @@ public class Main {
                     array[i] = getRandomNumber(maxValues);
             }
         } else {
-            for(int i = 0; i < array.length; i++) {
-                array[i] = getRandomNumberWithoutRepeating(array, maxValues);
+            for (int i = 0; i < array.length; i++) {
+                array[i] = i;
             }
         }
+
+        shuffleArray(array);
 	}
 
 	private static int getRandomNumber(int max) {
 		return (int) Math.floor(Math.random() * (max - 1 + 1)) + 1;
 	}
 
-    public static int getRandomNumberWithoutRepeating(int array[], int maxValues) {
-        int randomNumber = getRandomNumber(maxValues);
+    public static void shuffleArray(int array[]) {
+        Random random = new Random();
 
-        for(int i = 0; i < array.length ; i++) {
-            if(array[i] == randomNumber)
-                return getRandomNumberWithoutRepeating(array, maxValues);
+        for (int i = 0; i < (array.length - 1); i++) {
+            int i2 = random.nextInt(array.length);
+
+            int tempValue = array[i];
+
+            array[i] = array[i2];
+            array[i2] = tempValue;
         }
-
-        return randomNumber;
     }
 }
