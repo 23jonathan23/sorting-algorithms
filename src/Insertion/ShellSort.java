@@ -1,11 +1,10 @@
 package Insertion;
 
 public class ShellSort {
-	public static void sort(int array[])
-	{
+	public static void sort(int array[]) {
 		int arraySize = array.length;
 
-		for (int gap = arraySize/2; gap > 0; gap /= 2) {
+		for (int gap = arraySize / 2; gap > 0; gap /= 2) {
 			for (int i = gap; i < arraySize; i += 1) {
 				int tempValue = array[i];
 
@@ -20,4 +19,5 @@ public class ShellSort {
 	}
 }
 
-//Algoritimo usado como referência se encontra em: https://www.geeksforgeeks.org
+// Algoritimo usado como referência se encontra em:
+// https://www.geeksforgeeks.org

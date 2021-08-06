@@ -1,8 +1,7 @@
 package Insertion;
 
 public class InsertionSort {
-	public static void sort(int array[])
-	{
+	public static void sort(int array[]) {
 		for (int i = 1; i < array.length; ++i) {
 			int key = array[i];
 			int i2 = i - 1;
@@ -17,4 +16,5 @@ public class InsertionSort {
 	}
 }
 
-//Algoritimo usado como referência se encontra em: https://www.geeksforgeeks.org
+// Algoritimo usado como referência se encontra em:
+// https://www.geeksforgeeks.org

@@ -8,7 +8,7 @@ public class HeapSort {
 			heapify(array, arraySize, i);
 		}
 
-		for (int i= arraySize - 1; i>=0; i--) {
+		for (int i = arraySize - 1; i >= 0; i--) {
 			int tempValue = array[0];
 
 			array[0] = array[i];
@@ -18,11 +18,10 @@ public class HeapSort {
 		}
 	}
 
-	private static void heapify(int array[], int n, int i)
-	{
+	private static void heapify(int array[], int n, int i) {
 		int major = i;
-		int leftPosition = 2*i + 1;
-		int rightPosition = 2*i + 2;
+		int leftPosition = 2 * i + 1;
+		int rightPosition = 2 * i + 2;
 
 		if (leftPosition < n && array[leftPosition] > array[major])
 			major = leftPosition;
@@ -41,4 +40,5 @@ public class HeapSort {
 	}
 }
 
-//Algoritimo usado como referência se encontra em: https://www.geeksforgeeks.org
+// Algoritimo usado como referência se encontra em:
+// https://www.geeksforgeeks.org
