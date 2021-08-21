@@ -19,23 +19,23 @@ public class HeapSort {
 	}
 
 	private static void heapify(int array[], int n, int i) {
-		int major = i;
+		int minor = i;
 		int leftPosition = 2 * i + 1;
 		int rightPosition = 2 * i + 2;
 
-		if (leftPosition < n && array[leftPosition] > array[major])
-			major = leftPosition;
+		if (leftPosition < n && array[leftPosition] > array[minor])
+			minor = leftPosition;
 
-		if (rightPosition < n && array[rightPosition] > array[major])
-			major = rightPosition;
+		if (rightPosition < n && array[rightPosition] > array[minor])
+			minor = rightPosition;
 
-		if (major != i) {
+		if (minor != i) {
 			int swap = array[i];
 
-			array[i] = array[major];
-			array[major] = swap;
+			array[i] = array[minor];
+			array[minor] = swap;
 
-			heapify(array, n, major);
+			heapify(array, n, minor);
 		}
 	}
 }
